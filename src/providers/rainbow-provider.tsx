@@ -6,6 +6,13 @@ import { WagmiProvider } from "wagmi";
 import { Chain, sepolia } from "wagmi/chains";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { PropsWithChildren } from "react";
+import {
+  injectedWallet,
+  metaMaskWallet,
+  okxWallet,
+  safeWallet,
+  walletConnectWallet,
+} from "@rainbow-me/rainbowkit/wallets";
 
 const darwinia: Chain = {
   id: 46,
@@ -35,6 +42,7 @@ const projectId = process.env.NEXT_PUBLIC_WALLET_CONNECT_ID || "";
 const config = getDefaultConfig({
   appName,
   projectId,
+  wallets: [{ groupName: "Popular", wallets: [metaMaskWallet, okxWallet, safeWallet, walletConnectWallet] }],
   chains: [sepolia, darwinia],
 });
 const queryClient = new QueryClient();
