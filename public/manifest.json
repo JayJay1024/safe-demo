@@ -1,0 +1,5 @@
+{
+  "name": "Safe Demo",
+  "description": "Safe demo",
+  "icons": [{ "src": "vercel.svg", "sizes": "any" }]
+}
